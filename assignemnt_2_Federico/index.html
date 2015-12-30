@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset=UTF-8>
+	<title>MyBlog | Exploring HTML5 &amp; CSS3</title>
+	<link href="mystyle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onLoad="showMap();">
+	<header>
+		<div id="hgroup">
+			<h1><a href=#>Federico Barbero - The Blog</a></h1>
+			<h2>a blog to learn the new elements of HTML5</h2>
+		</div>
+		<nav id='global'>
+			<ul>
+				<li><a href=#>Archive</a></li>
+				<li><a href=#>Blog posts</a></li>
+				<li><a href=#>Comments</a></li>
+				<li><a href=#>Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class=clearfix>
+		<div id='content'>
+			<article>
+				<header>
+					<div class=time>
+						<div class=year>2015</div>
+						<div class=date>27<span>oct</span></div>
+					</div>
+					<h1>First Post</h1>
+					<div class=comments>3</div>
+				</header>
+				
+					<form class="form" method="post" action="#" onSubmit="return false;">
+						<span>
+							<label>First Name: </label>
+							<input type="text" name="name">
+						</span>
+						<span>
+							<label>Last Name: </label>
+							<input type="text" name="surname">
+						</span>
+						<span>
+							<label>Email: </label>
+							<input type="email" name="email">
+						</span>
+						<span>
+							<label>Phone Number: </label>
+							<input type="tel" name="phone">
+						</span>
+						<input type="submit" name="Continue" value="Continue">
+					</form>
+
+				<footer>
+					<em>Written by:</em> <strong>Federico B.</strong>
+				</footer>
+			</article>
+			<article id="geo_article">
+				<header>
+					<div class=time>
+						<div class=year>2015</div>
+						<div class=date>29<span>oct</span></div>
+					</div>
+					<h1>Second Post</h1>
+					<div class=comments>4</div>
+				</header>
+				
+					<div id="google-map" style="height: 320px;
+					width: 600px;"></div>
+					<p></p>
+					<form class="form" id="geolocation-form" method="post" action="#" onSubmit = "return false;">
+						<span>
+							<label>Street:</label> 
+							<input type="text" id="street" value="" placeholder="Street" />
+						</span>
+						<span>
+							<label>City:</label> 
+							<input type="text" id="city" value="" placeholder="City" />
+						</span>
+						<span>
+							<label>ZIP:</label> 
+							<input type="text" id="zip" value="" placeholder="ZIP Code" />
+						</span>
+						<span>
+							<label>Country:</label> 
+							<input type="text" id="country" value="" placeholder="Country" />
+						</span>
+						<input type="submit" id="updMap" value="Update Map" onClick="geocodeLatLng(geocoder, map, infowindow);"/>
+					</form>
+				
+				<footer>
+					<em>Written by:</em> <strong>Federico B.</strong>
+				</footer>
+			</article>
+			<article>
+				<header>
+					<div class=time>
+						<div class=year>2015</div>
+						<div class=date>31<span>oct</span></div>
+					</div>
+					<h1>Third Post</h1>
+					<div class=comments>258</div>
+				</header>
+				
+					<div id="video_div">
+						<video id="video" width="320" height="320" controls>
+							<source id="mp4source" src="https://archive.org/download/NASA_eClips_Solar_System_HD/NASA_eClips_Solar_System_HD_512kb.mp4" type="video/mp4" />
+							<source id="oggsource" src="https://archive.org/download/NASA_eClips_Solar_System_HD/NASA_eClips_Solar_System_HD.ogv" type="video/ogg" />
+							<source id="flvsource" src="https://archive.org/download/NASA_eClips_Solar_System_HD/NASA_Our_World_Solar_System_cropped_Medium.flv" type="video/flv" />
+							Your browser does not support the video tag.
+						</video> 
+					</div>
+				
+				<form class="form" id="videoForm" method="post" action="#" onSubmit="return false;">
+					<span>
+						<label>URL:</label> 
+						<input type="url" id="url-input" value="" placeholder="URL">
+						<button id="url-button" onClick="changeURL();">Change Video</button>
+					</span>
+					<span>
+						<label>Offset in seconds: </label>
+						<input type="number" id="seconds-input" value="" placeholder="0">
+						<button id="offset-button" onClick="offset();">Go</button>
+					</span>
+					<span>
+						<label>Extract preview</label>
+						<button id="preview-button" onClick="preview();">Go</button>
+					</span>
+					<span>
+						<label>Rotate the video</label>
+						<button id="rotate-video" onClick="rotate();">Go</button>
+					</span>
+					<span>
+						<label>Flip the video horizontally</label>
+						<button id="mirrorX-video" onClick="flipH();">Go</button>
+					</span>
+					<span>
+						<label>Flip the video vertically</label>
+						<button id="mirrorY-video" onClick="flipV();">Go</button>
+					</span>
+					<span>
+						<label>Hide controls:</label> 
+						<input type="checkbox" id="controls-check" onClick="toggleControls();"> 
+					</span>
+				</form>
+				<footer>
+					<em>Written by:</em> <strong>Federico Barbero</strong>
+				</footer>
+			</article>
+			<article>
+				<header>
+					<div class=time>
+						<div class=year>2015</div>
+						<div class=date>2<span>nov</span></div>
+					</div>
+					<h1>Fourth Post</h1>
+					<div class=comments>100</div>
+				</header>
+					<p>
+						Video jukebox player
+					</p>
+				<footer>
+					<em>Written by:</em> <strong>Federico Barbero</strong>
+				</footer>
+			</article>
+		</div>
+
+		<aside>
+			<section>
+				<h1>Stay in Touch</h1>
+				<ul id='inTouch'>
+					<li><span class=twitter>12345</span> <a href=#>Twitter</a> followers</li>
+					<li><span class=rss>4321</span> <a href=#>RSS feed</a> subscribers</li>
+				</ul>
+			</section>
+
+			<nav>
+				<h1>Releted Links</h1>
+				<ul class=links>
+					<li><a href=#>A List of</a></li>
+					<li><a href=#>Friendly Blogs</a></li>
+					<li><a href=#>That have Exchanged</a></li>
+					<li><a href=#>Links with Us</a></li>
+				</ul>
+			</nav>
+		</aside>
+	</div>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script>
+
+/**************************
+//Script for the google map
+**************************/
+
+var map = null;
+var geocoder = null;
+var googleMap = document.getElementById('google-map');
+var infowindow = new google.maps.InfoWindow;
+var currentCenter = null;
+var old_marker = null;
+
+function updateForm(){
+	var address = document.getElementById("street");
+	var city = document.getElementById("city");
+	var zip = document.getElementById("zip");
+	var country = document.getElementById("country");
+
+	//var input = document.getElementById('latlng').value;
+	// var latlngStr = input.split(',', 2);
+	// var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+	var latlng = {lat: currentCenter.lat(), lng: currentCenter.lng()};
+	//var latlng = {lat: 43.12, lng: 2.11};
+	geocoder.geocode({'location': latlng}, function(results, status) {
+		if (status === google.maps.GeocoderStatus.OK) {
+			//if (results[0] != null) {
+				var input = results[0].formatted_address.split(",");
+				//window.alert(results[0].formatted_address);
+				if(input[0])
+					address.value = input[0];
+				var input2 = input[1].split(" ");
+				//alert("input2_0: " +input2[0] + " input2_1: " + input2[1] + " input2_2: " + input2[2]);
+				if(input2[2])
+					city.value = input2[2];
+				if(input2[1])
+					zip.value = input2[1];
+				if(input[2])
+					country.value = input[2];
+
+				
+			} else {
+				window.alert('Geocoder failed due to: ' + status);
+			}
+		});
+
+	
+}
+
+function showPosition(position) {
+//Fonction to be passed to the browser's geolocation function
+var latLng = new google.maps.LatLng(
+	position.coords.latitude, position.coords.longitude);
+currentCenter = latLng;
+var marker = new google.maps.Marker({
+	position: latLng,
+	map: map
+});
+old_marker = marker;
+map.setCenter(latLng);
+map.setZoom(15);
+
+updateForm();
+
+document.getElementById('updMap').addEventListener('click', function() {
+	geocodeLatLng(geocoder, map, infowindow);
+});
+}
+
+function showMap() {
+    //This creates the initial map, or update it
+    if (!map) {
+    	map = new google.maps.Map(googleMap, {
+    		zoom: 3,
+    		// center: new google.maps.LatLng(37.4419, -94.1419), //newYork
+    		center: new google.maps.LatLng(48.5112, 2.2055),
+    		mapTypeId: google.maps.MapTypeId.ROADMAP
+    	});
+    }
+    if(!geocoder){
+    	geocoder = new google.maps.Geocoder();
+    }
+
+    if (navigator.geolocation) {
+    	navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+
+
+
+
+
+function geocodeLatLng(geocoder, map, infowindow) {
+	var address = document.getElementById("street").value;
+	var city = document.getElementById("city").value;
+	var zip = document.getElementById("zip").value;
+	var country = document.getElementById("country").value;
+	var newLocation = address + ", " + zip + ", " + city + ", " + country;
+	var new_marker = null;
+	
+
+	geocoder.geocode( { 'address': newLocation}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) { 
+			map.setCenter(results[0].geometry.location, 15);
+			currentCenter = results[0].geometry.location;
+			var marker = new google.maps.Marker({
+				map: map, 
+				position: results[0].geometry.location
+			});
+			new_marker = marker;
+			
+		} else {
+			alert("Error: " + status);
+		}
+	});
+
+	if(new_marker == null)
+		return;
+
+	if(old_marker != null)
+	{
+		old_marker.setMap(null);
+
+	}
+	old_marker = new_marker;
+}
+
+document.getElementById("geolocation-form").addEventListener('submit',function(){return false;},true);
+
+</script>
+
+<script>
+function isUrl(s) {
+	var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+	return regexp.test(s);
+}
+
+function changeURL(){
+	var url = document.getElementById('url-input').value;
+	if(!isUrl(url)){
+		alert("Error! Invalid URL!");
+		return;
+
+	}
+	var substr = url.split(".");
+	var last = substr[substr.length-1];
+	if(last === "mp4")
+		var videosource = document.getElementById("mp4source");
+	else if(last === "ogv")
+		var videosource = document.getElementById("oggsource");
+	else if(last === "flv")
+		var videosource = document.getElementById("flvsource");
+	else
+	{
+		alert("Error! wrong video format.");
+		return;
+	}
+	var videocontainer = document.getElementById("video");
+	videocontainer.pause();
+	videosource.setAttribute('src', url);
+	videocontainer.load();
+	videocontainer.play();
+}
+
+function offset(){
+	var videocontainer = document.getElementById("video");
+	var seconds = parseInt(document.getElementById("seconds-input").value);
+
+	if(isNaN(seconds))
+	{
+		alert("please insert a correct number!");
+		return;
+	}
+
+	video.currentTime = seconds;
+}
+
+function preview(){
+	alert("still to implement");
+}
+
+var rotation =0;
+
+function rotate(){
+	var v = document.getElementById("video");
+	var properties = ['transform', 'WebkitTransform', 'MozTransform', 'msTransform', 'OTransform'];
+	var prop = properties[0];
+	var i,j;
+	for(i=0, j= properties.length; i<j;i++)
+	{
+		if(typeof v.style[properties[i]] !== 'undefined')
+		{
+			prop = properties[i];
+			break;
+		}
+	}
+	rotation = rotation + 90;
+	v.style[prop]='rotate(' + rotation+'deg)';
+}
+
+function toggleControls(){
+	var check = document.getElementById("controls-check");
+	var video;
+
+	if(check.checked)
+	{
+		video = document.getElementById("video");
+		video.controls = false;
+	}
+	else
+	{
+		video = document.getElementById("video");
+		video.controls = true;
+	}
+}
+
+var scaleX = 1;
+var scaleY = 1;
+
+function flipH(){
+	var video = document.getElementById("video");
+	video.style.webkitTransform = "scale(" + (-scaleX) + ", " + scaleY + ")";
+	video.style.transform = "scale(" + (-scaleX) + ", " + scaleY + ")";
+	scaleX = -scaleX;
+}
+
+function flipV(){
+	var video = document.getElementById("video");
+	video.style.webkitTransform = "scale(" + scaleX + ", " + (-scaleY) + ")";
+	video.style.transform = "scale(" + scaleX + ", " + (-scaleY) + ")";
+	scaleY = -scaleY;
+}
+</script>
+
+</body>
+</html>

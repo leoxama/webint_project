@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Alessio Alberti</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Oswald Font -->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<link href="style.css" rel="stylesheet" media="screen">	
+		<link href="css/responsive.css" rel="stylesheet" media="screen">
+		<link href="css/imp_style.css" rel="stylesheet" />		
+
+	</head>
+
+	<body>
+		<section id="header_area">
+			<div class="wrapper header">
+				<div class="clearfix header_top">
+					<div class="clearfix logo floatleft">
+						<a href=""><h1><span>Alessio Alberti</span> The Blog</h1></a>
+					</div>
+					<div class="clearfix search floatright">
+						<form>
+							<input type="text" placeholder="Search"/>
+							<input type="submit" />
+						</form>
+					</div>
+				</div>
+				<div class="header_bottom">
+					<nav>
+						<ul id="nav">
+							<li><a href="">Home</a></li>
+							<li><a href="">Category</a></li>
+							<li id="dropdown"><a href="">Archive</a>
+								<ul>
+									<li><a href="">2015</a></li>
+									<li><a href="">2014</a></li>
+									<li><a href="">2013</a></li>
+								</ul>
+							</li>
+							<li><a href="">About us</a></li>
+							<li><a href="">Contact us</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</section>
+		
+		<section id="content_area">
+          	<input type="button" id="init-map" value="Show my location!"/>
+		</section>
+		<footer>
+		<section id="footer_top_area">
+			<div class="clearfix wrapper footer_top">
+				<div class="clearfix footer_top_container">
+					<div class="clearfix single_footer_top floatleft">
+						<h2>From Twitter</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <a href="">Lorem Ipsum has been the industry</a> standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+					<div class="clearfix single_footer_top floatleft">
+						<h2>Recent Post</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy <a href="">Lorem Ipsum has been the industry</a> text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+					<div class="clearfix single_footer_top floatleft">
+						<h2>Useful Links</h2>
+						<ul>
+							<li><a href="">Partner 1</a></li>
+							<li><a href="">Partner 2</a></li>
+							<li><a href="">Partner 3</a></li>
+							<li><a href="">Partner 4</a></li>
+							<li><a href="">Partner 5</a></li>
+							<li><a href="">Partner 6</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="footer_bottom_area">
+			<div class="clearfix wrapper footer_bottom">
+				<div class="clearfix copyright floatleft">
+					<p> Copyright &copy; All rights reserved.</p>
+				</div>
+			</div>
+		</section>
+		</footer>
+
+		<script type="text/javascript" src="js/navToComboBox.js"></script>
+		<script type="text/javascript">
+			selectnav('nav', {
+			  label: '-Navigation-',
+			  nested: true,
+			  indent: '-'
+			});
+		</script>	
+	 	<script type="text/javascript"
+      src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+    <script>
+    		function openMapPage(){
+    			location.href = "html/mapPage.html";
+    		}
+        	document.getElementById('home-red').addEventListener('click',openMapPage, true);
+    </script>
+	</body>
+</html>

@@ -1,7 +1,6 @@
 .floatleft{float:left}
 .floatright{float:right}
 
-.wrapper{width:1020px; display:block; margin:0 auto; overflow: auto}
 .clearfix{overflow:hidden}
 
 #header_area{background: url("../images/header_bg.png") repeat-x scroll center top #006838;}

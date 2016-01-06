@@ -1,0 +1,207 @@
+.sidebar_container{background: none repeat scroll 0 0 #15C543; padding: 10px; height:calc(100% - 20px); 
+/*width: 300px;*/}
+.main_container{height: 100%;}
+.pos{background: none repeat scroll 0 0 #2c2c2b;
+border: 1px solid #595957;
+padding: 5px;
+margin-bottom: 10px;
+}
+.pos input[type="text"]{background: none;
+border: none;
+color: #999;
+width: 76%;}
+.pos input[type="submit"]{-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+background: url("../images/location.png") no-repeat scroll 5px 0px rgba(0, 0, 0, 0);
+border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color #595957;
+border-image: none;
+border-style: none none none solid;
+border-width: medium medium medium 1px;
+cursor: pointer;
+height: 22px;
+width: 29px;
+float:right;
+padding-left: 5px;
+text-indent: -99999px}
+.button_aside {
+	width: 100%;
+	background: none repeat scroll 0 0 #2c2c2b;
+	border: 1px solid #595957;
+	padding: 5px;
+	padding-left: 11px;
+	color: #999;
+	margin-bottom: 10px;
+}
+
+.button_aside.coord span{
+padding-left: 41px;
+background: url(../images/coord.png) no-repeat 0 -1px;
+background-size:contain;
+}
+
+.button_aside.search span{
+padding-left: 22px;
+background: url(../images/search.png) no-repeat 0 0px;
+background-size:contain;
+}
+
+h2{
+	color:#2c2c2b;
+	margin-top: 5px;
+}
+.research_box{
+	/*display:block;*/
+	background: none repeat scroll 0 0 #FFF;
+	border: 2px solid #2c2c2b;
+	/*margin:0 auto; */
+	overflow:hidden;
+	padding: 5px;
+}
+.basic_box{
+	height: 90px; 
+    position: relative;
+}
+.left_box {
+	float:left;
+	max-height: 100%;
+	max-width: 30%;
+	line-height:90px;
+	overflow: hidden;
+
+}
+.dress_icon {
+  	max-width:100%; 
+  	max-height:100%;
+	vertical-align:middle;
+	cursor:pointer;
+}
+.right_box {
+	overflow: hidden;
+	height: 100%;
+	padding-left: 10px;
+	width: auto;
+}
+.dress_title{
+	height:100%;
+	float:left;
+	width: calc(100% - 40px);
+	display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+	cursor:pointer;
+}
+.box_buttons{
+	float:right;
+	height:100%;
+	width:35px;
+}
+.aside_button{
+    vertical-align: center;
+}
+.box_image_container{
+	width: 100%;
+	height: 50%;
+}
+.eye_button{
+	width:100%;
+	height: 100%;
+	background-image: url('../images/eye.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+	background-size:contain;
+	cursor:pointer;
+}
+.eye_closed{
+	background-image: url('../images/eye_closed.png');
+}
+.trash_button{
+	width:100%;
+	height: 100%;
+	background-image: url('../images/trash.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+	background-size:contain;
+	cursor:pointer;
+}
+.expansion{
+	overflow: hidden;
+	padding: 10px;
+}
+
+.reduced{
+	padding: 0px;
+	height: 0px;
+	width: 0px;
+}
+.edit_button{
+	background:url(../images/pencil.png) no-repeat 0 -1px;
+	background-size: contain;
+	height:30px;
+	width:30px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor:pointer;
+}
+#results{
+	overflow: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	border: 2px solid #2c2c2b;
+	height: 120px;
+	padding: 10px;
+	bottom: 0;
+}
+.map_result{
+	overflow: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	border: 2px solid #2c2c2b;
+	height: 70%;
+	bottom: 0;
+}
+.map_image{
+	width:50%;
+	height: 100%;
+    background-repeat: no-repeat;
+    background-position: center; 
+	background-size:contain;
+	cursor:pointer;
+	display: inline-block;
+	margin-right: 5px;
+}
+#google-map{
+	min-width: 100%;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	margin: 0 !important;
+	border: 0 !important;
+}
+.g-map-reduced{
+	max-height: calc(100% - 145px);
+	min-height: calc(100% - 145px) !important;
+}
+.res-box{
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	line-height:120px;
+	overflow: hidden;
+	border: 2px solid #249C03;
+	margin-right: 5px;
+	text-align:center;
+}
+.dress_result {
+  	max-width:100%; 
+  	max-height:100%;
+	vertical-align:middle;
+	cursor:pointer;
+}

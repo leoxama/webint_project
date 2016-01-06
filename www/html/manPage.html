@@ -1,38 +1,329 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Map</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Oswald Font -->
-		<link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
-		<link href="../css/style.css" rel="stylesheet" media="screen">	
-		<link href="../css/responsive.css" rel="stylesheet" media="screen">
-        <link href="../css/header_style.css" rel="stylesheet" media="screen">
-		<link href="../css/imp_style.css" rel="stylesheet" />		
-
-	</head>
-
-	<body>
-		<section id="header_area">
-			<div class="wrapper header">
-				<div class="clearfix header_left floatleft">
-					<div class="clearfix logo">
-                    	<img src="../images/diamond.png" alt="DressMeUp logo">
-						<a href=""><span>Dress Me</span> UP</a>
-					</div>
-				</div>
-				<div class="clearfix header_right floatright">
-                	<div class="user floatleft">
-	                	<img src="../images/user_hat.png" alt="user icon">
-						<a href="">John Smith</a>
-                    </div>
-                    <div class="header_buttons floatright">
-	                    <img src="../images/shopping_cart.png" alt="shopping cart">
-    	                <img src="../images/star.png" alt="star">
-                    </div>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Map</title>
+	<!--Oswald Font -->
+	<link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
+	<link href="../css/style.css" rel="stylesheet" media="screen">	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+	<link href="../css/responsive.css" rel="stylesheet" media="screen">
+    <link href="../css/header_style.css" rel="stylesheet" media="screen">
+    <link href="../css/aside_style.css" rel="stylesheet" media="screen">
+    <script src="../jquery/jquery.js"></script>
+</head>
+<body>
+	<section id="header_area">
+		<div class="wrapper header">
+			<div class="clearfix header_left floatleft">
+				<div class="clearfix logo">
+               	  <img src="../images/diamond.png" alt="DressMeUp logo">
+					<a href="#"><span>Dress Me</span> UP</a>
 				</div>
 			</div>
-		</section>
-	</body>
+			<div class="clearfix header_right floatright">
+               	<div class="user floatleft">
+               	  	<img src="../images/user_hat.png" alt="user icon">
+						<a href="">John Smith</a>
+                </div>
+                <div class="header_buttons floatright">
+                    <img src="../images/shopping_cart.png" alt="shopping cart">
+   	                <img src="../images/star.png" alt="star">
+                </div>
+			</div>
+		</div>
+	</section>
+    <section id="content_area">
+        <div class="wrapper main_content_area">
+        	<div id="main_content" class="split split-horizontal content_split">
+            	<div class="main_container">
+                   	<div id="google-map"></div>
+                    <div id="main-bottom"></div>
+                </div>
+            </div>
+            <aside id="aside" class="split split-horizontal content_split">
+            	<div class="sidebar_container">
+					<div class="pos">
+	                	<input type="text" placeholder="Choose a position..."/>
+           				<input type="submit" />
+    				</div>
+                    <button class="button_aside coord"><span>Coordinate my clothing</span></button>
+                    <button class="button_aside search"><span>Start a new research</span></button>
+                    <hr>
+                    <h2>Researches</h2>
+                    <div id="boxes">
+                        <!--<div class="research_box">
+                            <div class="basic_box">
+                                <div class="left_box">
+                                    <img class="dress_icon" src="../images/clothes/regular.png" alt="regular">
+                                </div>
+                                <div class="right_box">
+                                    <div class="dress_title"><span>Light-blue regular jeans</span></div>
+                                    <div class="box_buttons">
+                                        <div class="box_image_container">
+                                            <div class="eye_button"></div>
+                                        </div>
+                                        <div class="box_image_container">
+                                            <div class="trash_button"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                             <div class="expansion reduced">
+                                <hr>
+                                <table>
+                                  <tr>
+                                    <th>Categories:</th>
+                                    <td>Shoes</td>
+                                  </tr>
+                                  <tr>
+                                    <th rowspan="2"><div class="edit_button"></div></th>
+                                    <td>High heels</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Beige</td>
+                                  </tr>
+                                </table>
+                             </div>
+                        </div>-->
+                   	</div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <script src="../js/split.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script>
+		/*Fake data*/
+		var entries = Array();
+		entries.push({ name: "Light blue regular jeans", pict: "../images/clothes/regular.png", categs: ["Jeans", "Regular", "Light blue"], results: [{ name: "Shop1", pict: ["regular.png"], coord:{name: "Shop", long:-80.19179020000001, lat:25.7616798}}]});
+		entries.push({ name: 'High heels shoes', pict: '../images/clothes/shoes.png', categs: ['Shoes', 'High heels', 'Beige'], results: [{ name: "Shop1",pict: ["shoes.png","shoesRes1.png"], coord:{long:-74.005941,lat:40.712784}},{name: "Shop2",pict: ["shoesRes1.png"],coord:{long:-87.629798,lat:41.878114}},{name: "Shop3",pict: ["shoesRes2.png"],coord:{long:-122.407830,lat:37.794565}},{name: "Shop4",pict: ["shoesRes3.png"],coord:{long:-121.176058,lat:38.677959}},{name: "Shop5",pict: ["shoesRes4.png"],coord:{long:-77.036871,lat:38.907192}}]});
+		var colors = ['#fe2020','#ffdf00','#05e177','#0033ee','#ae1af7'];
+		/*map*/
+		var map = null;
+      	var geocoder = null;
+      	var googleMap = document.getElementById('google-map');
+		var infowindow = new google.maps.InfoWindow;
+		var markers = [];
+		var bounds;
+		var pictures = [];
+		
+		function markerColor(color) {
+			return {
+				path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+				fillColor: color,
+				fillOpacity: 1,
+				strokeColor: '#000',
+				strokeWeight: 2,
+				scale: 1,
+		   };
+		}
+		function addMark(shop,keyResult,color,pictures) {
+			//Fonction to be passed to the browser's geolocation function
+			var coord = shop.coord;
+			var name = shop.name;
+			var pict = shop.pict;
+			
+			var latLng = new google.maps.LatLng(coord.lat, coord.long);
+			
+			var contentString = '<div id="content">'+
+			  						'<h1 id="firstHeading" class="firstHeading">' + name + '</h1>'+
+									'<div id="bodyMapContent">';								
+			pict.forEach(function(value){
+				contentString += '<div class="map_image" style="	background-image: url(../images/clothes/' + value + ');"></div>'
+			});
+			contentString += '</div></div>';
+
+			var infowindow = new google.maps.InfoWindow({
+				content: contentString,
+				maxWidth: 200
+	    	});
+			var marker = new google.maps.Marker({
+				position: latLng,
+				icon: markerColor(color),
+				map: map
+			});
+			markers[keyResult].push({mark: marker, images: pictures});
+			marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			});
+			bounds.extend(latLng);
+		}
+			
+		function showMap() {
+			//This creates the initial map, or update it
+			if (!map) {
+				map = new google.maps.Map(googleMap, {
+					zoom: 3,
+					center: new google.maps.LatLng(37.4419, -94.1419), //newYork
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
+			}
+			bounds = new google.maps.LatLngBounds();		
+		}
+	
+		/*aside functions*/
+		var prevExpanded = null;
+		function anim(event){
+			 var timeout = 100;
+			 pictureId = event.currentTarget.id;
+			 markers.forEach(function(valueRes){
+				valueRes.forEach(function(valueMark,keyMark){
+					valueMark.images.forEach(function(valuePict){
+						if(valuePict == pictureId){
+							valueRes[keyMark].mark.setAnimation(google.maps.Animation.BOUNCE);
+							setTimeout(function(){ valueRes[keyMark].mark.setAnimation(null); }, 750);
+						}
+					});
+				}); 
+			 });
+		}
+		function expand_el(event){
+			var clickedBox = event.currentTarget.parentNode.parentNode.parentNode;
+			clickedBox.childNodes[1].classList.toggle('reduced');
+			if(!clickedBox.childNodes[1].classList.contains('reduced')){
+				if(prevExpanded != null){
+					prevExpanded.childNodes[1].classList.toggle('reduced');
+					var bottom = document.getElementById("results");
+					bottom.parentNode.removeChild(bottom);
+				}else{
+					googleMap.classList.toggle('g-map-reduced');
+				}
+				var container = document.getElementById('main-bottom');
+				var innerHtml = "<div id=\"results\">";
+				prevExpanded = clickedBox;
+				var results = entries[clickedBox.id].results;
+				var flag = false;
+				pictures.forEach(function(value,key) {
+					flag = false;
+					markers[clickedBox.id].forEach(function(valueMark,keyMark){
+						valueMark.images.forEach(function(valuePict){
+							if(valuePict == key && flag == false){
+								innerHtml += "<div id=\""+ key +"\"class=\"res-box\" style=\"border: 2px solid " + colors[clickedBox.id] +";\"><img class=\"dress_result\" src=\"../images/clothes/" + value.pict + "\"></div>";
+								flag = true;
+							}
+						});
+					});
+				});
+				innerHtml += "</div>";
+				container.innerHTML = innerHtml;
+				var x = document.querySelectorAll('.res-box');
+				for (var i = 0; i < x.length; i++) {
+					x.item(i).addEventListener('click',anim,true);
+				}
+			}else{
+				prevExpanded = null;
+				var bottom = document.getElementById("results");
+				bottom.parentNode.removeChild(bottom);
+				googleMap.classList.toggle('g-map-reduced');
+			}
+		}
+		
+		function del(event){
+			/*remove pictures entries*/
+			if(prevExpanded != null){
+				prevExpanded = null;
+				var bottom = document.getElementById("results");
+				bottom.parentNode.removeChild(bottom);
+				googleMap.classList.toggle('g-map-reduced');	
+			}
+			var clickedBox = event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode;
+			listRes = document.querySelectorAll('.dress_result');
+			var i;
+			for (i = 0; i < listRes.length; i++) {
+				listRes.item(i).parentNode.removeChild(listRes.item(i));
+			}
+			clickedBox.parentNode.removeChild(clickedBox);
+			entries[clickedBox.id] = {};
+			markers[clickedBox.id].forEach(function(value){
+				value.images.forEach(function(valuePict){
+					pictures.splice(valuePict, 1);
+				});
+			});
+			markers[clickedBox.id].forEach(function(value){
+				value.mark.setMap(null);
+			});
+		}
+		
+		function show(event){
+			clickedBox = event.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode;
+			markers[clickedBox.id].forEach(function(value){
+				value.mark.setVisible(!value.mark.getVisible());
+			});
+			event.currentTarget.classList.toggle('eye_closed');	
+		}
+		
+		$(document).ready(function(){
+			showMap();
+			var innerHtml = document.getElementById("boxes").innerHTML;
+			markers.length = entries.length;
+			var i;
+			for (i = 0; i < markers.length; i++) {
+				markers[i] = [];
+			}
+			entries.forEach(function(value,key) {
+				var name = value.name;
+				var pict = value.pict;
+				var categs = value.categs;
+				innerHtml += "<div id=" + key +" class=\"research_box\" style=\"border: 2px solid " + colors[key] + ";\"><div class=\"basic_box\"><div class=\"left_box\"><img class=\"dress_icon\" src=\"" + pict + "\" alt=\"regular\"></div><div class=\"right_box\"><div class=\"dress_title\"><span>" + name + "</span></div><div class=\"box_buttons\"><div class=\"box_image_container\"><div class=\"eye_button\"></div></div><div class=\"box_image_container\"><div class=\"trash_button\"></div></div></div></div></div><div class=\"expansion reduced\"><hr><table><tr><th>Categories:</th><td>" + categs[0] + "</td></tr><tr><th rowspan=\"" + (categs.length-1) + "\"><div class=\"edit_button\"></div></th>";
+				categs.forEach(function(value,key2) {
+					if(key2>0)
+						innerHtml += "<td>" + value + "</td></tr>";
+				});
+				value.results.forEach(function(value) {
+					pict = value.pict;
+					var pictIds = [];
+					pict.forEach(function(value){
+						var flag = false;
+						for (var i = 0; i < pictures.length; i++) {
+							if (pictures[i].pict == value) {
+								flag = true;
+								pictures[i].res.push(key);
+								pictIds.push(i);
+							}
+						}
+						if(flag==false){
+							pictures.push({pict: value, res:[key]});
+							pictIds.push(pictures.length-1);
+						}
+					});
+					addMark(value,key,colors[key],pictIds);
+				});
+				map.fitBounds(bounds);
+				innerHtml += "</table></div></div>";
+			});
+			/*resize*/
+			height = $('#header_area').outerHeight();
+			$('#content_area').css('height', window.innerHeight-height-50+ 'px');
+			document.getElementById("boxes").innerHTML = innerHtml;
+			/*Event Listeners*/
+			var i;
+			var x = document.querySelectorAll('.dress_icon');
+			for (i = 0; i < x.length; i++) {
+				x.item(i).addEventListener('click',expand_el,true);
+			}
+			x = document.querySelectorAll('.dress_title');
+			for (i = 0; i < x.length; i++) {
+				x.item(i).addEventListener('click',expand_el,true);
+			}
+			x = document.querySelectorAll('.trash_button');
+			for (i = 0; i < x.length; i++) {
+				x.item(i).addEventListener('click',del,true);
+			}
+			x = document.querySelectorAll('.eye_button');
+			for (i = 0; i < x.length; i++) {
+				x.item(i).addEventListener('click',show,true);
+			}
+		});
+		/*splitter*/
+	    Split(['#main_content', '#aside'], {
+   			direction: 'horizontal',
+   			sizes: [75, 25],
+      		gutterSize: 8,
+      		cursor: 'col-resize'
+    	})
+		
+       </script>
+</body>
 </html>

@@ -12,14 +12,16 @@
     <link href="../css/header_style.css" rel="stylesheet" media="screen">
     <link href="../css/aside_style.css" rel="stylesheet" media="screen">
     <script src="../jquery/jquery.js"></script>
+	<script src="../jquery/jquery.paulund_modal_box.js"></script>
+	<script src="../jquery/webcam.js"></script>
 </head>
 <body>
 	<section id="header_area">
 		<div class="wrapper header">
 			<div class="clearfix header_left floatleft">
 				<div class="clearfix logo">
-               	  <img src="../images/diamond.png" alt="DressMeUp logo">
-					<a href="#"><span>Dress Me</span> UP</a>
+               	  	<img src="../images/diamond.png" alt="DressMeUp logo">
+				  	<a href="#"><span>Dress Me</span> UP</a>
 				</div>
 			</div>
 			<div class="clearfix header_right floatright">
@@ -45,49 +47,14 @@
             <aside id="aside" class="split split-horizontal content_split">
             	<div class="sidebar_container">
 					<div class="pos">
-	                	<input type="text" placeholder="Choose a position..."/>
-           				<input type="submit" />
+	                	<input id="pos_text" type="text" placeholder="Choose a position..."/>
+           				<button id="loc_but"/>
     				</div>
-                    <button class="button_aside coord"><span>Coordinate my clothing</span></button>
-                    <button class="button_aside search"><span>Start a new research</span></button>
+                    <button id="coord_clothes" class="button_aside coord"><span>Coordinate my clothing</span></button>
+                    <button id="start_res" class="button_aside search"><span>Start a new research</span></button>
                     <hr>
                     <h2>Researches</h2>
-                    <div id="boxes">
-                        <!--<div class="research_box">
-                            <div class="basic_box">
-                                <div class="left_box">
-                                    <img class="dress_icon" src="../images/clothes/regular.png" alt="regular">
-                                </div>
-                                <div class="right_box">
-                                    <div class="dress_title"><span>Light-blue regular jeans</span></div>
-                                    <div class="box_buttons">
-                                        <div class="box_image_container">
-                                            <div class="eye_button"></div>
-                                        </div>
-                                        <div class="box_image_container">
-                                            <div class="trash_button"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                             <div class="expansion reduced">
-                                <hr>
-                                <table>
-                                  <tr>
-                                    <th>Categories:</th>
-                                    <td>Shoes</td>
-                                  </tr>
-                                  <tr>
-                                    <th rowspan="2"><div class="edit_button"></div></th>
-                                    <td>High heels</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Beige</td>
-                                  </tr>
-                                </table>
-                             </div>
-                        </div>-->
-                   	</div>
+                    <div id="boxes"></div>
                 </div>
             </aside>
         </div>
@@ -108,7 +75,6 @@
 		var markers = [];
 		var bounds;
 		var pictures = [];
-		
 		function markerColor(color) {
 			return {
 				path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
@@ -160,7 +126,10 @@
 					mapTypeId: google.maps.MapTypeId.ROADMAP
 				});
 			}
-			bounds = new google.maps.LatLngBounds();		
+			bounds = new google.maps.LatLngBounds();	
+			if(!geocoder){
+              geocoder = new google.maps.Geocoder();
+            }
 		}
 	
 		/*aside functions*/
@@ -178,6 +147,39 @@
 					});
 				}); 
 			 });
+		}
+		function getPos(event){
+			var newLocation = document.getElementById("pos_text").value;
+            geocoder.geocode( { 'address': newLocation}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+              } else {
+                alert("Error: " + status);
+              }
+            });	
+		}
+		var opened = false;
+		function import_Photo(event){
+			if (opened == false){
+				opened = true;
+				$('#imp_photo').paulund_modal_box();
+			}
+		}
+		function coord_cloth(event){
+			var coord_clothes = document.getElementById('coord_clothes');
+			var start_research = document.getElementById('start_res');
+			var parent = coord_clothes.parentNode;
+		    var cameraButton = document.createElement("button");
+			cameraButton.className = "button_aside camera";
+			cameraButton.id = "imp_photo";
+			cameraButton.innerHTML = '<span>Import a photo</span>';
+			parent.insertBefore(cameraButton, coord_clothes.nextSibling);
+			coord_clothes.parentNode.removeChild(coord_clothes);
+			start_research.parentNode.removeChild(start_research);
+			var imagePicture = document.createElement("div");
+			imagePicture.id = "final_photo";
+			parent.insertBefore(imagePicture, cameraButton.nextSibling);
+			cameraButton.addEventListener('click', import_Photo, true);
 		}
 		function expand_el(event){
 			var clickedBox = event.currentTarget.parentNode.parentNode.parentNode;
@@ -315,6 +317,8 @@
 			for (i = 0; i < x.length; i++) {
 				x.item(i).addEventListener('click',show,true);
 			}
+			document.getElementById('loc_but').addEventListener('click',getPos,true);
+			document.getElementById('coord_clothes').addEventListener('click',coord_cloth,true);
 		});
 		/*splitter*/
 	    Split(['#main_content', '#aside'], {

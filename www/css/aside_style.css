@@ -10,7 +10,7 @@ margin-bottom: 10px;
 border: none;
 color: #999;
 width: 76%;}
-.pos input[type="submit"]{-moz-border-bottom-colors: none;
+.pos button{-moz-border-bottom-colors: none;
 -moz-border-left-colors: none;
 -moz-border-right-colors: none;
 -moz-border-top-colors: none;
@@ -44,6 +44,12 @@ background-size:contain;
 .button_aside.search span{
 padding-left: 22px;
 background: url(../images/search.png) no-repeat 0 0px;
+background-size:contain;
+}
+
+.button_aside.camera span{
+padding-left: 30px;
+background: url(../images/camera.png) no-repeat 0 0px;
 background-size:contain;
 }
 

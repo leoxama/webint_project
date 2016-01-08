@@ -71,11 +71,14 @@ h2{
 }
 .left_box {
 	float:left;
-	max-height: 100%;
-	max-width: 30%;
-	line-height:90px;
+	height: 100%;
+	width:30%;
 	overflow: hidden;
-
+	background-image: url('../images/clothes/regular.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+	background-size:contain;
+	cursor: pointer;
 }
 .dress_icon {
   	max-width:100%; 
@@ -210,4 +213,8 @@ h2{
   	max-height:100%;
 	vertical-align:middle;
 	cursor:pointer;
+}
+#boxes{
+	overflow: auto;
+	overflow-x: hidden;	
 }

@@ -46,15 +46,15 @@
             </div>
             <aside id="aside" class="split split-horizontal content_split">
             	<div class="sidebar_container">
-					<div class="pos">
+                    <div class="pos">
 	                	<input id="pos_text" type="text" placeholder="Choose a position..."/>
            				<button id="loc_but"/>
     				</div>
                     <button id="coord_clothes" class="button_aside coord"><span>Coordinate my clothing</span></button>
                     <button id="start_res" class="button_aside search"><span>Start a new research</span></button>
                     <hr>
-                    <h2>Researches</h2>
-                    <div id="boxes"></div>
+                    <h2 id="sep">Researches</h2>
+   	                <div id="boxes"></div>
                 </div>
             </aside>
         </div>
@@ -178,11 +178,17 @@
 			start_research.parentNode.removeChild(start_research);
 			var imagePicture = document.createElement("div");
 			imagePicture.id = "final_photo";
+			$('#boxes').css('height', $('.sidebar_container').outerHeight() - ($('#boxes').position().top - $('#boxes').parent().offset().top) - 10 + 'px');
 			parent.insertBefore(imagePicture, cameraButton.nextSibling);
 			cameraButton.addEventListener('click', import_Photo, true);
 		}
 		function expand_el(event){
-			var clickedBox = event.currentTarget.parentNode.parentNode.parentNode;
+			var clickedBox;
+			if(event.currentTarget.classList[0] == "left_box")
+				clickedBox= event.currentTarget.parentNode.parentNode;
+			else
+				clickedBox= event.currentTarget.parentNode.parentNode.parentNode;
+
 			clickedBox.childNodes[1].classList.toggle('reduced');
 			if(!clickedBox.childNodes[1].classList.contains('reduced')){
 				if(prevExpanded != null){
@@ -268,7 +274,7 @@
 				var name = value.name;
 				var pict = value.pict;
 				var categs = value.categs;
-				innerHtml += "<div id=" + key +" class=\"research_box\" style=\"border: 2px solid " + colors[key] + ";\"><div class=\"basic_box\"><div class=\"left_box\"><img class=\"dress_icon\" src=\"" + pict + "\" alt=\"regular\"></div><div class=\"right_box\"><div class=\"dress_title\"><span>" + name + "</span></div><div class=\"box_buttons\"><div class=\"box_image_container\"><div class=\"eye_button\"></div></div><div class=\"box_image_container\"><div class=\"trash_button\"></div></div></div></div></div><div class=\"expansion reduced\"><hr><table><tr><th>Categories:</th><td>" + categs[0] + "</td></tr><tr><th rowspan=\"" + (categs.length-1) + "\"><div class=\"edit_button\"></div></th>";
+				innerHtml += "<div id=" + key +" class=\"research_box\" style=\"border: 2px solid " + colors[key] + ";\"><div class=\"basic_box\"><div class=\"left_box\" style=\"background-image: url('" + pict + "');\"></div><div class=\"right_box\"><div class=\"dress_title\"><span>" + name + "</span></div><div class=\"box_buttons\"><div class=\"box_image_container\"><div class=\"eye_button\"></div></div><div class=\"box_image_container\"><div class=\"trash_button\"></div></div></div></div></div><div class=\"expansion reduced\"><hr><table><tr><th>Categories:</th><td>" + categs[0] + "</td></tr><tr><th rowspan=\"" + (categs.length-1) + "\"><div class=\"edit_button\"></div></th>";
 				categs.forEach(function(value,key2) {
 					if(key2>0)
 						innerHtml += "<td>" + value + "</td></tr>";
@@ -298,10 +304,11 @@
 			/*resize*/
 			height = $('#header_area').outerHeight();
 			$('#content_area').css('height', window.innerHeight-height-50+ 'px');
+			$('#boxes').css('height', $('.sidebar_container').outerHeight() - ($('#boxes').position().top - $('#boxes').parent().offset().top) - 10 + 'px');
 			document.getElementById("boxes").innerHTML = innerHtml;
 			/*Event Listeners*/
 			var i;
-			var x = document.querySelectorAll('.dress_icon');
+			var x = document.querySelectorAll('.left_box');
 			for (i = 0; i < x.length; i++) {
 				x.item(i).addEventListener('click',expand_el,true);
 			}
@@ -324,10 +331,10 @@
 	    Split(['#main_content', '#aside'], {
    			direction: 'horizontal',
    			sizes: [75, 25],
+			minSize: 250,
       		gutterSize: 8,
-      		cursor: 'col-resize'
-    	})
-		
+      		cursor: 'col-resize',
+    	});
        </script>
 </body>
 </html>

@@ -142,6 +142,7 @@
 				Webcam.snap( function(data_uri) {
 					$('div#final_photo').empty();
 					$('<img src = "' + data_uri +'"/>').appendTo($('div#final_photo'));
+$('#boxes').css('height', $('.sidebar_container').outerHeight() - ($('#boxes').position().top - $('#boxes').parent().offset().top) - 10 + 'px');
 					document.getElementById('post_take_buttons').style.display = 'none';
 				} );
 			}	
@@ -187,8 +188,9 @@
 					  $('.paulund_modal_box').stop().animate({height:'500px'});
 					  if(opened == false){
 						  opened = true;
-						  $('<img src = "' + e.target.result + '" style="max-width: 400px; max-height: 300px;"/>').appendTo('#my_cam');				
+						  $('<img src = "' + e.target.result + '" style="max-width: 400px; max-height: 300px;"/>').appendTo('#my_cam');						
 					  }
+$('#boxes').css('height', $('.sidebar_container').outerHeight() - ($('#boxes').position().top - $('#boxes').parent().offset().top) - 10 + 'px');
 					};
 					reader.readAsDataURL(input.files[0]);
 				  }

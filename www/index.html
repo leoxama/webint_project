@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Alessio Alberti</title>
+		<title>DressMe Up</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--Oswald Font -->
@@ -9,7 +9,8 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">	
 		<link href="css/responsive.css" rel="stylesheet" media="screen">
         <link href="css/header_style.css" rel="stylesheet" media="screen">
-		<link href="css/imp_style.css" rel="stylesheet" />		
+		<link href="css/imp_style.css" rel="stylesheet" />
+        <link href="css/full-width-pics.css" rel="stylesheet" />
 
 	</head>
 
@@ -24,19 +25,46 @@
 				</div>
 				<div class="clearfix header_right floatright">
                 	<div class="user floatleft">
-	                	<img src="images/user_hat.png" alt="user icon">
-						<a href="">John Smith</a>
+	                	<img id="home-red" src="images/user_hat.png" alt="user icon">
+						<!--<a href="">John Smith</a>-->
                     </div>
                     <div class="header_buttons floatright">
+                    	<form class="header_buttons floatright">
+                        	<input type="text" placeholder="Username"/>
+                            <input type="password" placeholder="Password" />
+                            <input type="button" value="Login"/>
+                            <input type="button" value="Sign Up" />
+                        </form>
+                    </div>
+                    <!--<div class="header_buttons floatright">
 	                    <img src="images/shopping_cart.png" alt="shopping cart">
     	                <img src="images/star.png" alt="star">
-                    </div>
+                    </div>-->
 				</div>
 			</div>
 		</section>
 		
-		<section id="content_area">
-          	<input type="button" id="home-red" value="Go to MapPage!"/>
+		<section id="content_area" style="padding-top:0px;">
+        	<header class="image-bg-fluid-height">
+        	<!--<img class="img-responsive img-center" src="http://placehold.it/200x200&text=Logo" alt="">-->
+    		</header>
+            <div class="container">
+                <!--<div class="row">
+                    <div class="col-lg-12">-->
+                        <h1 class="section-heading">Section Heading</h1>
+                        <p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+                    <!--</div>
+                </div>-->
+            </div>
+            <div id="padder"></div>
+		</section>
+    
+     <!-- Fixed Height Image Aside -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <!--<aside class="image-bg-fixed-height"></aside>-->
+        
+        <!--  	<input type="button" id="home-red" value="Go to MapPage!"/>
 		</section>
 		<footer>
 		<section id="footer_top_area">
@@ -64,7 +92,7 @@
 				</div>
 			</div>
 		</section>
-		
+		-->
 		<section id="footer_bottom_area">
 			<div class="clearfix wrapper footer_bottom">
 				<div class="clearfix copyright floatleft">
@@ -72,7 +100,6 @@
 				</div>
 			</div>
 		</section>
-		</footer>
 
 		<script type="text/javascript" src="js/navToComboBox.js"></script>
 		<script type="text/javascript">

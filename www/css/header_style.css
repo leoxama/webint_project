@@ -28,7 +28,7 @@ padding: 10px;*/}
 .header_buttons{height:80px;line-height: 80px;}
 .header_buttons img{width: 50px; height: 50px;vertical-align:middle;}
 .user{}
-.user img{width: 80px; height: 80px; vertical-align:middle;}
+.user img{width: 80px; height: 80px; vertical-align:middle; margin-right:15px}
 .user a{vertical-align:middle; color: #FFF; padding:0 16px 0 0; 
 	font-family: oswald;
 	font-size: 18px;

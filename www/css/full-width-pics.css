@@ -1,0 +1,86 @@
+/*!
+ * Start Bootstrap - Full Width Pics HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/*body {
+    margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+/*}*/
+
+.image-bg-fluid-height,
+.image-bg-fixed-height {
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.image-bg-fluid-height {
+	/*background: url(../images/main_bg.png) no-repeat center center fixed;/*url('http://lorempixel.com/g/1920/500/') no-repeat center center scroll;*//*
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+    padding: 100px 0;
+	height:100%;*/
+	height: 100%;
+	z-index: -10;
+	background: transparent url("../images/main_bg.png") no-repeat scroll center center / cover;
+	padding: 250px 0px;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+
+.image-bg-fixed-height {
+	/*background: url('http://lorempixel.com/g/1920/500/') no-repeat center center scroll;*/
+    height: 450px;
+}
+
+.img-center {
+	margin: 0 auto;
+}
+
+/*section {
+    padding: 75px 0;
+}*/
+
+.section-heading {
+    margin: 30px 0;
+    font-size: 4em;
+}
+
+.section-lead {
+    margin: 30px 0;
+}
+
+.section-paragraph {
+    margin: 30px 0;
+}
+
+.container {
+	position:absolute;
+	z-index=1;
+	margin: 70px 140px 175px 140px;
+    padding : 30px;
+    width: 700px;
+    height: 400px;
+}
+
+#footer_bottom_area {
+	position:fixed;
+	width:100%;
+	bottom:0;
+}
+
+@media(max-width:768px) {
+    section {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .section-heading {
+        font-size: 2em;
+    }
+}

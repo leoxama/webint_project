@@ -1,4 +1,7 @@
 /* CSS Document */
+textarea {
+    resize: none;
+}
 #container
 {
 width:360px;

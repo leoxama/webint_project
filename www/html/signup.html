@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>DressMe Up | Login</title>
+		<title>DressMe Up | SignUp</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--Oswald Font -->
@@ -135,7 +135,7 @@
                     	<p>Confirm</p>
                         <form>
                         	<div id="credit_div">
-                        		<textarea id="recap" class="log_span log_area" readonly rows="15">
+                        		<textarea id="recap" class="log_span log_area" readonly rows="16">
                                 </textarea>
                                 <textarea class="log_span log_area" readonly rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id urna eget lacus malesuada varius. Praesent imperdiet eros sapien, tempus fermentum orci pellentesque ac. Praesent vulputate pellentesque lectus eu dictum. Sed odio ante, accumsan in nulla ut, auctor efficitur ante. Curabitur lacinia at massa non dictum. Etiam suscipit euismod accumsan. Donec tincidunt fringilla sapien, at volutpat augue mollis ut. Curabitur in laoreet metus. Aliquam lobortis tortor ut ultricies dapibus. Vestibulum feugiat metus vitae nibh tempus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tincidunt pulvinar ligula eget molestie.
 
@@ -155,10 +155,10 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
                             </div>
                             <span class="log_span">
                             	<label>I have read it!</label>
-                                <input class="log_input" type="checkbox" />
+                                <input class="log_input" id="check_read" type="checkbox" />
                             </span>
-                            <input class="cancel_bt" id="b2" type="button" value="Back" />
-                            <input class="nxt_bt" id="n3" type="button" value="Next" />
+                            <input class="cancel_bt" id="b3" type="button" value="Back" />
+                            <input class="nxt_bt" id="n4" type="button" value="Next" />
                         </form>
                     </div>
                 </div>
@@ -195,7 +195,25 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
 					"telephone":""	
 				};
 				data.creditcard = cc;
-				console.log(data);
+				
+				var check_full = function(){
+					for(var key in data)
+					{
+						if(key === "creditcard")
+						{
+							for(var key2 in data["creditcard"])
+							{
+								if(data["creditcard"][key2] === "")
+									return false;
+							}
+						}							
+						else 
+							if(data[key] === "")
+								return false;	
+					}	
+					return true;				
+				};
+				
 				$(".data").change(data,function(){
 					var X=$(this).attr('id');
 					console.log("Id: " + X);
@@ -226,6 +244,10 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
 						case "01":	data["password"] = $(this).val();
 									break;
 						case "02":	data["confirm_password"]=$(this).val();
+									if(data["confirm_password"] ==="")
+										break;
+									if(data["password"]!==data["confirm_password"])
+										alert("Error! The passwords inserted do not match!");
 									break;	
 						case "03":	data["email"] =$(this).val();
 									break;	
@@ -260,7 +282,10 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
 						var X=$(this).attr('id');
 						if(X=='n1')
 						{	
-							$("#personal").trigger("click");
+							if(data["password"]!==data["confirm_password"])
+								alert("Error! The passwords inserted do not match!");
+							else
+								$("#personal").trigger("click");
 						}
 						if(X=='n2')
 						{
@@ -269,6 +294,18 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
 						if(X=='n3')
 						{
 							$("#confirm").trigger("click");
+						}
+						if(X=='n4')
+						{
+							if(check_full())
+							{
+								if( !$("#check_read").is(":checked"))
+									alert("Please accept the conditions above!");
+								else
+									location.href = "manpage.html";
+							}
+							else
+								alert("Some fields are still to be completed!\nPlease fill them up!");
 						}
 					}
 				);
@@ -287,7 +324,11 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
 						if(X=='b2')
 						{
 							$("#personal").trigger("click");
-						}							
+						}
+						if(X=='b3')
+						{
+							$("#payment").trigger("click");
+						}								
 					}
 				);
 				
@@ -309,38 +350,48 @@ Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius
 					}
 					if(X=='confirm')
 					{
-						$("#signup").removeClass('select');
-						$("#personal").removeClass('select');
-						$("#payment").removeClass('select');
-						$("#confirm").addClass('select');
-						$("#signupbox").slideUp();
-						$("#personalbox").slideUp();
-						$("#paymentbox").slideUp();
-						$("#confirmbox").slideDown();
+						if(data["password"]!==data["confirm_password"])
+								alert("Error! The passwords inserted do not match!");
+						else{
+							$("#signup").removeClass('select');
+							$("#personal").removeClass('select');
+							$("#payment").removeClass('select');
+							$("#confirm").addClass('select');
+							$("#signupbox").slideUp();
+							$("#personalbox").slideUp();
+							$("#paymentbox").slideUp();
+							$("#confirmbox").slideDown();
+						}
 					}
 					if(X=='personal')
 					{
-						$("#confirm").removeClass('select');
-						$("#signup").removeClass('select');
-						$("#payment").removeClass('select');
-						$("#personal").addClass('select');
-						$("#confirmbox").slideUp();
-						$("#signupbox").slideUp();
-						$("#paymentbox").slideUp();
-						$("#personalbox").slideDown();
-						
+						if(data["password"]!==data["confirm_password"])
+								alert("Error! The passwords inserted do not match!");
+						else{
+							$("#confirm").removeClass('select');
+							$("#signup").removeClass('select');
+							$("#payment").removeClass('select');
+							$("#personal").addClass('select');
+							$("#confirmbox").slideUp();
+							$("#signupbox").slideUp();
+							$("#paymentbox").slideUp();
+							$("#personalbox").slideDown();
+						}
 					}
 					if(X=='payment')
 					{
-						$("#confirm").removeClass('select');
-						$("#personal").removeClass('select');
-						$("#signup").removeClass('select');
-						$("#payment").addClass('select');
-						$("#confirmbox").slideUp();
-						$("#personalbox").slideUp();
-						$("#signupbox").slideUp();
-						$("#paymentbox").slideDown();
-						
+						if(data["password"]!==data["confirm_password"])
+								alert("Error! The passwords inserted do not match!");
+						else{
+							$("#confirm").removeClass('select');
+							$("#personal").removeClass('select');
+							$("#signup").removeClass('select');
+							$("#payment").addClass('select');
+							$("#confirmbox").slideUp();
+							$("#personalbox").slideUp();
+							$("#signupbox").slideUp();
+							$("#paymentbox").slideDown();
+						}						
 					}
 				});
 			});

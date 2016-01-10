@@ -3,7 +3,7 @@ body{font-family:Arial;
     font-size:14px;line-height:20px;height:100%}
 a{text-decoration:none;color:#000;}
 a:hover{text-decoration:none}
-input[type=text],input[type=password],input[type=submit],textarea{border:1px solid #ddd;padding:5px;outline:0;}
+input[type=text],input[type=password],input[type=submit],input[type=email],input[type=tel],textarea{border:1px solid #ddd;padding:5px;outline:0;}
 h1,h2,h3,h4,h5,h6{font-weight:normal;margin:0 0 15px;font-family: 'Oswald', sans-serif;}
 h2 {font-size:25px;line-height:30px}
 img{max-width:100%;height:auto;border:none}

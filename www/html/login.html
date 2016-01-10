@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DressMe Up | Login</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Oswald Font -->
+		<link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
+		<link href="../css/style.css" rel="stylesheet" media="screen">	
+		<link href="../css/responsive.css" rel="stylesheet" media="screen">
+        <link href="../css/header_style.css" rel="stylesheet" media="screen">
+		<!--<link href="../css/imp_style.css" rel="stylesheet" />-->
+        <link href="../css/full-width-pics.css" rel="stylesheet" />
+        <link href="../css/form.css" rel="stylesheet" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	</head>
+
+	<body style="overflow-x:hidden">
+		<section id="header_area">
+			<div class="wrapper header">
+				<div class="clearfix header_left floatleft">
+					<div class="clearfix logo">
+                    	<img id="home-red" src="../images/diamond.png" alt="DressMeUp logo">
+						<a href="../index.html"><span>Dress Me</span> UP</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="content_area">
+        	<div id="container">
+				<div id="tabbox">
+                	<a href="#" id="confirm" class="tab">Confirm</a>
+                    <a href="#" id="payment" class="tab">Payment</a>
+                    <a href="#" id="personal" class="tab">Personal</a>
+                	<a href="#" id="signup" class="tab select">Signup</a>                    
+                </div>
+				<div id="panel">
+                	<div id="signupbox">
+                    	<form>
+                        	<span class="log_span">
+                            	<label>Username: </label>
+                                <input class="log_input data" id="00" type="text" placeholder="Username" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Password: </label>
+                                <input class="log_input data" id="01" type="password" placeholder="Password" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Confirm Password: </label>
+                                <input class="log_input data" id="02" type="password" placeholder="Confirm password" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Email: </label>
+                                <input class="log_input data" id="03" type="email" placeholder="Email" />
+                            </span>
+                            <input class="cancel_bt" id="cancel_bt" type="button" value="Cancel" />
+                            <input class="nxt_bt" id="n1" type="button" value="Next" />
+                        </form>
+                    </div>
+					<div id="personalbox">
+                    	<form>
+                        	<span class="log_span">
+                            	<label>Name: </label>
+                                <input class="log_input data" id="04" type="text" placeholder="Name" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Surname: </label>
+                                <input class="log_input data" id="05" type="text" placeholder="Surname" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Address: </label>
+                                <input class="log_input data" id="06" type="text" placeholder="Address" />
+                            </span>
+                            <span class="log_span">
+                            	<label>City: </label>
+                                <input class="log_input data" id="07" type="text" placeholder="City" />
+                            </span>
+                            <span class="log_span">
+                            	<label>ZIP: </label>
+                                <input class="log_input data" id="08" type="text" placeholder="ZIP" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Telephone: </label>
+                                <input class="log_input data" id="09" type="tel" placeholder="Telephone" />
+                            </span>
+                            <input class="cancel_bt" id="b1" type="button" value="Back" />
+                            <input class="nxt_bt" id="n2" type="button" value="Next" />
+                        </form>
+                    </div>
+                    <div id="paymentbox">
+                    	<p>Credit card</p>
+                        <form>
+                        	<div id="credit_div">
+                        	<span class="log_span">
+                            	<label>Type: </label>
+                                <select class="log_input  data" id="10">
+                                	<option selected>Visa</option>
+                                    <option>Mastercard</option>
+                                    <option>Maestro</option>
+                                    <option>American Express</option>
+                                </select>
+                            </span>
+                            <span class="log_span">
+                            	<label>Name: </label>
+                                <input class="log_input data" id="11" type="text" placeholder="Name" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Surname: </label>
+                                <input class="log_input data" id="12" type="text" placeholder="Surname" />
+                            </span>
+                            <span class="log_span">
+                            	<label>Card Number: </label>
+                                <input class="log_input data" id="13" type="text" placeholder="Card Number" />
+                            </span>
+                            <span class="log_span">
+                            	<label>CVV2: </label>
+                                <input class="log_input data" id="14" type="text" placeholder="CVV2" />
+                            </span>
+                            </div>
+                            <hr/>
+                            <p>Paypal</p>
+                            <div id="credit_div">
+                            	<!--<button type="button" id="paypal_bt">
+                                	<img src=""
+                                </button>-->
+                                <!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"></a></td></tr></table><!-- PayPal Logo -->
+                            </div>
+                            <input class="cancel_bt" id="b2" type="button" value="Back" />
+                            <input class="nxt_bt" id="n3" type="button" value="Next" />
+                        </form>
+                        
+                    </div>
+                    <div id="confirmbox">
+                    	<p>Confirm</p>
+                        <form>
+                        	<div id="credit_div">
+                        		<textarea id="recap" class="log_span log_area" readonly rows="15">
+                                </textarea>
+                                <textarea class="log_span log_area" readonly rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id urna eget lacus malesuada varius. Praesent imperdiet eros sapien, tempus fermentum orci pellentesque ac. Praesent vulputate pellentesque lectus eu dictum. Sed odio ante, accumsan in nulla ut, auctor efficitur ante. Curabitur lacinia at massa non dictum. Etiam suscipit euismod accumsan. Donec tincidunt fringilla sapien, at volutpat augue mollis ut. Curabitur in laoreet metus. Aliquam lobortis tortor ut ultricies dapibus. Vestibulum feugiat metus vitae nibh tempus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tincidunt pulvinar ligula eget molestie.
+
+Nulla porta, odio quis volutpat rutrum, odio mauris lobortis arcu, nec tempor risus augue ac tellus. Nam id posuere justo. Fusce ut tellus mi. Fusce molestie nulla vitae metus viverra, ut interdum ipsum porta. Quisque sit amet aliquam felis, eu tempus risus. Aenean feugiat nec enim vitae accumsan. Sed volutpat cursus pharetra. In hac habitasse platea dictumst. Nullam sodales volutpat lobortis. Nulla fringilla magna sit amet hendrerit ultrices. Sed pharetra lacinia ante, quis vehicula erat tristique eget. Curabitur consectetur est non diam ornare, sed porttitor erat faucibus.
+
+Donec eget metus lacinia, facilisis mi vitae, bibendum leo. Nam mattis nisl finibus urna gravida luctus. Nullam erat neque, tempor ac tristique quis, pellentesque eget tortor. Cras ut sem eu risus gravida sagittis in id ligula. Pellentesque condimentum laoreet placerat. Donec sodales, ex sit amet congue mollis, dui nunc sagittis mi, nec efficitur diam arcu at sapien. In hac habitasse platea dictumst. Nulla efficitur, mauris tristique tempor euismod, augue erat congue dui, quis auctor lectus tellus sit amet sem. Proin rutrum id metus vel dignissim. Pellentesque eu malesuada ligula.
+
+Fusce pretium ligula tortor, ut hendrerit ligula blandit mattis. Nulla blandit pellentesque nunc, id luctus magna faucibus et. Nunc ut nisi libero. Nam eget volutpat erat, nec sodales metus. Duis et diam in lacus rhoncus sagittis blandit a mi. Etiam vel convallis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ultricies vitae mauris a bibendum. Duis non nulla aliquet, bibendum leo id, venenatis libero. Cras aliquam blandit est eget accumsan. Curabitur porttitor viverra condimentum. Pellentesque ut risus vel lectus interdum pellentesque. Nulla ultricies lacus et augue feugiat mattis. Etiam eget orci augue.
+
+Donec volutpat eleifend volutpat. Aliquam erat volutpat. Vestibulum ornare posuere mauris ac gravida. Fusce augue magna, bibendum eget finibus at, sagittis et lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer molestie pulvinar rutrum. Donec cursus velit sed fringilla placerat.
+
+Vivamus sit amet justo auctor, iaculis risus ac, tristique sem. Etiam consequat aliquam suscipit. Nam in rutrum ligula. In dictum non nunc vel gravida. Fusce id dolor id mi pulvinar dictum. Nullam porta urna quam. Sed vel magna id massa pellentesque volutpat vitae nec nulla. Vestibulum vitae pellentesque risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce faucibus consectetur condimentum. Maecenas tempor venenatis massa id sagittis. Sed pellentesque turpis nisi, vel iaculis enim porta non. Curabitur congue faucibus pellentesque.
+
+Nam a tincidunt nisi, vitae molestie odio. Curabitur tempus purus lacus, ac ullamcorper mauris bibendum nec. Nam tortor magna, luctus eget magna ac, tincidunt hendrerit nisl. Suspendisse sed ante justo. Etiam egestas euismod dolor, sed auctor nisl varius at. Fusce iaculis consectetur ipsum in fermentum. Nulla malesuada vulputate laoreet. Donec volutpat risus eu aliquet varius. Vivamus laoreet ante ac sapien auctor accumsan. Donec et sollicitudin lorem. Ut posuere neque at justo finibus, ac finibus lorem malesuada. Vestibulum gravida consequat nulla eget faucibus. Duis rhoncus, ligula at placerat cursus, risus nunc fringilla arcu, eget mollis orci est et orci. Aenean eget felis eget tortor sollicitudin pharetra in vitae nisl. Mauris at justo sed urna sodales vestibulum eu finibus leo.
+
+Nulla dictum lorem in justo dapibus ullamcorper. Curabitur bibendum ex at varius pellentesque. Proin quis turpis purus. Aliquam erat volutpat. Duis pretium urna ante, id dictum nulla eleifend in. Ut leo orci, sodales fringilla ultrices id, mattis ac dolor. Cras maximus gravida lorem a dictum. Nullam maximus nunc et mattis euismod.</textarea>
+                            </div>
+                            <span class="log_span">
+                            	<label>I have read it!</label>
+                                <input class="log_input" type="checkbox" />
+                            </span>
+                            <input class="cancel_bt" id="b2" type="button" value="Back" />
+                            <input class="nxt_bt" id="n3" type="button" value="Next" />
+                        </form>
+                    </div>
+                </div>
+			</div>
+        </section>
+            
+		<section id="footer_bottom_area">
+			<div class="clearfix wrapper footer_bottom">
+				<div class="clearfix copyright floatleft">
+					<p> Copyright &copy; All rights reserved.</p>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				var cc = {
+					"type":"",
+					"name":"",
+					"surname":"",
+					"number":"",
+					"cvv2":""	
+				};
+				var data = {
+					"username":"",
+					"password":"",
+					"confirm_password":"",
+					"email":"",
+					"name":"",
+					"surname":"",
+					"address":"",
+					"city":"",
+					"zip":"",
+					"telephone":""	
+				};
+				data.creditcard = cc;
+				console.log(data);
+				$(".data").change(data,function(){
+					var X=$(this).attr('id');
+					console.log("Id: " + X);
+					var update_box = function(){
+						var newnum = data["creditcard"]["number"];
+						newnum = newnum.substr(newnum.length - 4);
+						console.log(newnum);
+						$("#recap").val("Username: "+ data["username"]+"\n"+
+										"Email: "+ data["email"]+"\n"+
+										"Name: "+ data["name"]+"\n"+
+										"Surname: "+ data["surname"]+"\n"+
+										"Address: "+ data["address"]+"\n"+
+										"City: "+ data["city"]+"\n"+
+										"ZIP: "+ data["zip"]+"\n"+
+										"Telephone: "+ data["telephone"]+"\n"+
+										"____________________\n"+
+										"Credit card: "+ "\n"+
+										"    Type: "+ data["creditcard"]["type"]+"\n"+
+										"    Name: "+ data["creditcard"]["name"]+"\n"+
+										"    Surname: "+ data["creditcard"]["surname"]+"\n"+
+										"    Number: **********"+ newnum +"\n"+
+										"    CVV2: "+ data["creditcard"]["cvv2"]+"\n"										
+						);	
+					};
+					switch(X){
+						case "00":	data["username"] = $(this).val();
+									break;	
+						case "01":	data["password"] = $(this).val();
+									break;
+						case "02":	data["confirm_password"]=$(this).val();
+									break;	
+						case "03":	data["email"] =$(this).val();
+									break;	
+						case "04":	data["name"]=$(this).val();
+									break;	
+						case "05":	data["surname"]=$(this).val();
+									break;	
+						case "06":	data["address"]=$(this).val();
+									break;
+						case "07":	data["city"]=$(this).val();
+									break;	
+						case "08":	data["zip"]=$(this).val();
+									break;	
+						case "09":	data["telephone"]=$(this).val();
+									break;
+						case "10":	data["creditcard"]["type"] =$("#10 option:selected").text();
+									break;	
+						case "11":	data["creditcard"]["name"] =$(this).val();
+									break;
+						case "12":	data["creditcard"]["surname"] =$(this).val();
+									break;	
+						case "13":	data["creditcard"]["number"] =$(this).val();
+									break;	
+						case "14":	data["creditcard"]["cvv2"] =$(this).val();
+									break;
+					}
+					
+					update_box();
+				});
+				$(".nxt_bt").click(function()
+					{
+						var X=$(this).attr('id');
+						if(X=='n1')
+						{	
+							$("#personal").trigger("click");
+						}
+						if(X=='n2')
+						{
+							$("#payment").trigger("click");
+						}
+						if(X=='n3')
+						{
+							$("#confirm").trigger("click");
+						}
+					}
+				);
+				
+				$(".cancel_bt").click(function()
+					{
+						var X=$(this).attr('id');
+						if(X=='cancel_bt')
+						{	
+							alert("Go back to home!");
+						}
+						if(X=='b1')
+						{
+							$("#signup").trigger("click");
+						}
+						if(X=='b2')
+						{
+							$("#personal").trigger("click");
+						}							
+					}
+				);
+				
+				$(".tab").click(function()
+				{
+					var X=$(this).attr('id');
+					
+					if(X=='signup')
+					{
+						$("#confirm").removeClass('select');
+						$("#personal").removeClass('select');
+						$("#payment").removeClass('select');
+						$("#signup").addClass('select');
+						$("#confirmbox").slideUp();
+						$("#personalbox").slideUp();
+						$("#paymentbox").slideUp();
+						$("#signupbox").slideDown();
+						
+					}
+					if(X=='confirm')
+					{
+						$("#signup").removeClass('select');
+						$("#personal").removeClass('select');
+						$("#payment").removeClass('select');
+						$("#confirm").addClass('select');
+						$("#signupbox").slideUp();
+						$("#personalbox").slideUp();
+						$("#paymentbox").slideUp();
+						$("#confirmbox").slideDown();
+					}
+					if(X=='personal')
+					{
+						$("#confirm").removeClass('select');
+						$("#signup").removeClass('select');
+						$("#payment").removeClass('select');
+						$("#personal").addClass('select');
+						$("#confirmbox").slideUp();
+						$("#signupbox").slideUp();
+						$("#paymentbox").slideUp();
+						$("#personalbox").slideDown();
+						
+					}
+					if(X=='payment')
+					{
+						$("#confirm").removeClass('select');
+						$("#personal").removeClass('select');
+						$("#signup").removeClass('select');
+						$("#payment").addClass('select');
+						$("#confirmbox").slideUp();
+						$("#personalbox").slideUp();
+						$("#signupbox").slideUp();
+						$("#paymentbox").slideDown();
+						
+					}
+				});
+			});
+		</script>
+
+		<script type="text/javascript" src="../js/navToComboBox.js"></script>
+		<!--<script type="text/javascript">
+			selectnav('nav', {
+			  label: '-Navigation-',
+			  nested: true,
+			  indent: '-'
+			});
+		</script>	-->
+	 	<!--<script type="text/javascript"
+      src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+
+    <script>
+    		function homePage(){
+    			location.href = "../index.html";
+    		}
+        	document.getElementById('home-red').addEventListener('click',homePage, true);
+    </script>
+	</body>
+</html>

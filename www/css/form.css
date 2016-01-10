@@ -1,0 +1,93 @@
+/* CSS Document */
+#container
+{
+width:360px;
+margin-left:35%;
+}
+#tabbox
+{
+height:40px;
+}
+#panel
+{
+background-color:#FFF;
+height:300px;
+}
+.nxt_bt{
+	float: right;
+	width: 80px;
+	margin-top: 20px;
+}
+#credit_div{
+	padding-left:20px;	
+}
+.cancel_bt{
+	float:left;
+	width: 80px;
+	margin-top: 20px;
+}
+.log_span{
+	display: block;
+	margin: 20px;
+}
+.log_area{
+	width:270px;
+}
+.log_input{
+	width:150px;
+	float: right;
+}
+.tab
+{
+background: #dedede;
+display: block;
+height: 40px;
+line-height: 40px;
+text-align: center;
+width: 90px;
+float: right;
+font-weight: bold;
+-webkit-border-top-left-radius: 4px;
+-webkit-border-top-right-radius: 4px;
+-moz-border-radius: 4px 4px 0px 0px;
+}
+a
+{
+color: #000;
+margin: 0;
+padding: 0;
+text-decoration: none;
+}
+.signup
+{
+}
+.select
+{
+background-color:#FFF;
+}
+
+#signupbox
+{
+min-height:200px;
+padding:10px;
+}
+#personalbox
+{
+min-height:200px;
+padding:10px;
+display:none;
+}
+#paymentbox
+{
+min-height:200px;
+padding:10px;
+display:none;
+}
+#confirmbox
+{
+min-height:200px;
+padding:10px;
+display:none;
+}
+
+

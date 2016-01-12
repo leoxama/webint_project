@@ -7,7 +7,7 @@
 .header{}
 .header_top{padding: 15px 0;}
 .header_left{padding: 15px 15px}
-.logo{}
+.logo{cursor: pointer;}
 .logo img{width: 80px;
 		  height: 80px;
 		  vertical-align:middle;}

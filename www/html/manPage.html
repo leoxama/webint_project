@@ -19,9 +19,9 @@
 	<section id="header_area">
 		<div class="wrapper header">
 			<div class="clearfix header_left floatleft">
-				<div class="clearfix logo">
+				<div id="logo" class="clearfix logo">
                	  	<img src="../images/diamond.png" alt="DressMeUp logo">
-				  	<a href="#"><span>Dress Me</span> UP</a>
+				  	<a><span>Dress Me</span> UP</a>
 				</div>
 			</div>
 			<div class="clearfix header_right floatright">
@@ -326,6 +326,7 @@
 			}
 			document.getElementById('loc_but').addEventListener('click',getPos,true);
 			document.getElementById('coord_clothes').addEventListener('click',coord_cloth,true);
+			document.getElementById('logo').addEventListener('click',function(){location.href = "../index.html";},true);
 		});
 		/*splitter*/
 	    Split(['#main_content', '#aside'], {

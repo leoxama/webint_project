@@ -142,7 +142,6 @@
 				Webcam.snap( function(data_uri) {
 					$('div#final_photo').empty();
 					$('<img src = "' + data_uri +'"/>').appendTo($('div#final_photo'));
-$('#boxes').css('height', $('.sidebar_container').outerHeight() - ($('#boxes').position().top - $('#boxes').parent().offset().top) - 10 + 'px');
 					document.getElementById('post_take_buttons').style.display = 'none';
 				} );
 			}	

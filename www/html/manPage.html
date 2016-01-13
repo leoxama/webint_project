@@ -335,6 +335,7 @@
 			minSize: 250,
       		gutterSize: 8,
       		cursor: 'col-resize',
+			onDrag: function(){$('#boxes').css('height', $('.sidebar_container').outerHeight() - ($('#boxes').position().top - $('#boxes').parent().offset().top) - 10 + 'px');}
     	});
        </script>
 </body>

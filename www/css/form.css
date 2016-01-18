@@ -5,7 +5,6 @@ textarea {
 #container
 {
 width:360px;
-margin-left:35%;
 }
 #tabbox
 {
@@ -14,7 +13,7 @@ height:40px;
 #panel
 {
 background-color:#FFF;
-height:300px;
+padding-bottom: 100px;
 }
 .nxt_bt{
 	float: right;
@@ -93,4 +92,38 @@ padding:10px;
 display:none;
 }
 
+
+
+/*		Mobile Layout: 320px. */
+
+@media only screen and (max-width: 479px) {
+	
+	.wrapper {
+		width: 252px;
+		/*padding: 48px 34px 60px;*/
+	}
+	.logo{display: block;}
+	.logo{width:80px;height:80px;}
+	.logo a{display:block !important;}
+	.user{padding-right:5px;}
+	.user a{display: block;}
+	.header_left{display:block;}
+}
+
+
+
+/*		Wide Mobile Layout: 480px.  */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.wrapper {
+		width: 436px;
+	}
+
+	.logo{display: block;}
+	.logo{width:80px;height:80px;}
+	.logo a{display:block;}
+	.user{padding-right:5px;}
+	.user a{display: block;}
+	.header_left{display:block;}
+}
 

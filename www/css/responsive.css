@@ -26,22 +26,24 @@
   margin-left: 10px;
   width: 230px;
 }
-	
 }
 
 
 
 /*		Mobile Layout: 320px. */
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 479px) {
 	
 	.wrapper {
 		width: 252px;
 		/*padding: 48px 34px 60px;*/
 	}
+	.header_left{display:none;}
 	/*#selectnav1{display:block;height: 30px;width: 232px;}
 	#nav{display:none;}	*/
 	.logo{display:none;}
+	.logo{width:80px;height:80px;}
+	.logo a{display:none;}
 	.user{padding-right:5px;}
 	.user a{display: none;}
 }
@@ -54,11 +56,13 @@
 	.wrapper {
 		width: 436px;
 	}
+
 	.logo{display: block;}
 	.logo{width:80px;height:80px;}
 	.logo a{display:none;}
 	.user{padding-right:5px;}
 	.user a{display: none;}
+
 }
 
 
